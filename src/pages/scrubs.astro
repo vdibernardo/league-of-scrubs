@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import bradImage from "../assets/scrubs/brad.png";
+---
+
+<Layout>
+  <main class="min-h-screen py-12">
+    <section class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 justify-items-center"
+      >
+        <Card
+          img={bradImage}
+          champion="CHAMPION"
+          sinceYear="SINCE '13"
+          title="FICKLE MICKLE’S LITTL EPICKLE"
+          stats={[
+            { label: "SQUEELER", value: "1" },
+            { label: "DONG", value: "1" },
+          ]}
+        />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </section>
+  </main>
+</Layout>

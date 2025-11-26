@@ -1,0 +1,93 @@
+---
+
+---
+
+<nav
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 mt-4 rounded-xl max-w-6xl mx-auto transition-all duration-300 ease-in-out"
+>
+  <div class="mx-auto px-6">
+    <div class="grid grid-cols-3 items-center py-4 transition-all duration-300">
+      <a
+        href="/"
+        id="logo"
+        class="text-white text-xl font-semibold transition-all duration-300 justify-self-start"
+      >
+        League of Scrubs
+      </a>
+      <div class="flex flex-row items-center justify-center space-x-8">
+        <a
+          href="/scrubs"
+          class="nav-link text-white text-sm font-medium hover:opacity-80 transition-opacity"
+        >
+          Scrubs
+        </a>
+        <a
+          href="/draft"
+          class="nav-link text-white text-sm font-medium hover:opacity-80 transition-opacity"
+        >
+          Draft
+        </a>
+      </div>
+      <button
+        onclick="window.open('https://theleagueofscrubs.bigcartel.com/?_gl=1*5f8xrj*_gcl_au*NzQ4NDE2OTYwLjE3NjQwNDc1OTAuNjY3NzI4NTU4LjE3NjQwNDc1OTguMTc2NDA0NzU5Nw..*_ga*MTM1NDMwNzQzOS4xNzY0MDQ3NTkw*_ga_QZ4HDFTSEZ*czE3NjQwNDc1ODkkbzEkZzEkdDE3NjQwNDc1OTckajUyJGwwJGgyMzEzNjY4MTk.', '_blank')"
+        class="nav-button bg-white text-black text-sm font-medium px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity justify-self-end"
+      >
+        Shop
+      </button>
+    </div>
+  </div>
+</nav>
+
+<script>
+  function adjustNavbar() {
+    const navbar = document.getElementById("navbar");
+    const logo = document.getElementById("logo");
+    const navButton = document.querySelector(".nav-button");
+
+    if (!navbar || !logo) return;
+
+    const innerDiv = navbar.querySelector("div");
+    if (!innerDiv) return;
+
+    if (window.scrollY > 50) {
+      // Scrolled state - white background with backdrop blur
+      navbar.classList.remove("max-w-6xl");
+      navbar.classList.add(
+        "bg-white",
+        "bg-opacity-5",
+        "backdrop-blur-md",
+        "shadow-sm",
+        "border",
+        "border-gray-700",
+        "max-w-5xl"
+      );
+
+      // Logo styling
+
+      // Button styling
+      if (navButton) {
+      }
+    } else {
+      // Top state - transparent
+      navbar.classList.remove(
+        "bg-white",
+        "bg-opacity-5",
+        "backdrop-blur-md",
+        "shadow-sm",
+        "border",
+        "border-gray-700",
+        "max-w-5xl"
+      );
+      navbar.classList.add("max-w-6xl");
+
+      // Logo styling
+    }
+  }
+
+  // Run on mount and scroll
+  if (typeof window !== "undefined") {
+    adjustNavbar(); // Set initial state
+    window.addEventListener("scroll", adjustNavbar);
+  }
+</script>
