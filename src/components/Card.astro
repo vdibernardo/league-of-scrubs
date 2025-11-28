@@ -18,7 +18,9 @@ const {
 } = Astro.props;
 ---
 
-<div class="card-container w-[252px] h-[352px] rounded-3xl p-[9px]">
+<div
+  class="card-container w-full sm:w-[252px] aspect-[252/352] sm:h-[352px] rounded-3xl p-[9px]"
+>
   <div class="card-flip w-full h-full">
     <div class="card-front w-full h-full rounded-2xl">
       {
