@@ -1,7 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import bradImage from "../assets/scrubs/brad.png";
+import bradImage from "../assets/scrubs/scrub-brad.png";
+import bradTeam from "../assets/team/team-brad.png";
+import bradyImage from "../assets/scrubs/scrub-brady.png";
+import bradyTeam from "../assets/team/team-brady.png";
+import mikeImage from "../assets/scrubs/scrub-mike.png";
+import mikeTeam from "../assets/team/team-duran.png";
+import calebImage from "../assets/scrubs/scrub-caleb.png";
+import calebTeam from "../assets/team/team-caleb.png";
+import edImage from "../assets/scrubs/scrub-ed.png";
+import edTeam from "../assets/team/team-ed.png";
+import kaitImage from "../assets/scrubs/scrub-kait.png";
+import kaitTeam from "../assets/team/team-kait.png";
+import vinceImage from "../assets/scrubs/scrub-vince.png";
+import vinceTeam from "../assets/team/team-vince.png";
+import tonyImage from "../assets/scrubs/scrub-tony.png";
+import tonyTeam from "../assets/team/team-tony.png";
+import mattImage from "../assets/scrubs/scrub-matt.png";
+import mattTeam from "../assets/team/team-matt.png";
+import mickleImage from "../assets/scrubs/scrub-mickle.png";
+import mickleTeam from "../assets/team/team-mickle.png";
+import stockImage from "../assets/scrubs/scrub-stock.png";
+import stockTeam from "../assets/team/team-stock.png";
+import chrisImage from "../assets/scrubs/scrub-chris.png";
+import chrisTeam from "../assets/team/team-chris.png";
 ---
 
 <Layout>
@@ -14,23 +37,123 @@ import bradImage from "../assets/scrubs/brad.png";
           img={bradImage}
           champion="CHAMPION"
           sinceYear="SINCE '13"
-          title="FICKLE MICKLE’S LITTL EPICKLE"
+          title="KING PENGUIN"
+          backImage={bradTeam}
+          stats={[
+            { label: "SQUEELER", value: "5" },
+            { label: "DONG", value: "0" },
+          ]}
+        />
+        <Card
+          img={bradyImage}
+          sinceYear="SINCE '13"
+          title="BLANK SPACE CADETS"
+          backImage={bradyTeam}
+          stats={[
+            { label: "SQUEELER", value: "3" },
+            { label: "DONG", value: "1" },
+          ]}
+        />
+        <Card
+          img={calebImage}
+          sinceYear="SINCE '18"
+          title="TD CITY"
+          backImage={calebTeam}
+          stats={[
+            { label: "SQUEELER", value: "1" },
+            { label: "DONG", value: "0" },
+          ]}
+        />
+        <Card
+          img={chrisImage}
+          sinceYear="SINCE '20"
+          title="GOBELL OR GO HOME"
+          backImage={chrisTeam}
+          stats={[
+            { label: "SQUEELER", value: "1" },
+            { label: "DONG", value: "0" },
+          ]}
+        />
+        <Card
+          img={mikeImage}
+          sinceYear="SINCE '13"
+          title="PRAYING 4 A GREEN CARD"
+          backImage={mikeTeam}
           stats={[
             { label: "SQUEELER", value: "1" },
             { label: "DONG", value: "1" },
           ]}
         />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card
+          img={tonyImage}
+          sinceYear="SINCE '13"
+          title="GAME OF CHRONS"
+          backImage={tonyTeam}
+          stats={[
+            { label: "SQUEELER", value: "1" },
+            { label: "DONG", value: "3" },
+          ]}
+        />
+        <Card
+          img={kaitImage}
+          sinceYear="SINCE '13"
+          title="HANGIN' BRAIN ON THE BEAN"
+          backImage={kaitTeam}
+          stats={[
+            { label: "SQUEELER", value: "0" },
+            { label: "DONG", value: "0" },
+          ]}
+        />
+        <Card
+          img={mattImage}
+          sinceYear="SINCE '17"
+          title="VBALLER? I BARELY KNOW'ER"
+          backImage={mattTeam}
+          stats={[
+            { label: "SQUEELER", value: "0" },
+            { label: "DONG", value: "0" },
+          ]}
+        />
+        <Card
+          img={stockImage}
+          sinceYear="SINCE '19"
+          title="MR. MIKEASTONKZ"
+          backImage={stockTeam}
+          stats={[
+            { label: "SQUEELER", value: "0" },
+            { label: "DONG", value: "1" },
+          ]}
+        />
+        <Card
+          img={mickleImage}
+          sinceYear="SINCE '17"
+          title="FICKLE MICKLE's LITTLE PICKLE"
+          backImage={mickleTeam}
+          stats={[
+            { label: "SQUEELER", value: "0" },
+            { label: "DONG", value: "1" },
+          ]}
+        />
+        <Card
+          img={vinceImage}
+          sinceYear="SINCE '13"
+          title="MIND GOBLINS"
+          backImage={vinceTeam}
+          stats={[
+            { label: "SQUEELER", value: "0" },
+            { label: "DONG", value: "1" },
+          ]}
+        />
+        <Card
+          img={edImage}
+          sinceYear="SINCE '13"
+          title="ED ASS"
+          backImage={edTeam}
+          stats={[
+            { label: "SQUEELER", value: "0" },
+            { label: "DONG", value: "3" },
+          ]}
+        />
       </div>
     </section>
   </main>
