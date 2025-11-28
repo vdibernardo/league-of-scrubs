@@ -324,10 +324,76 @@ const {
           "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
         if (isMobile || isTouchDevice) {
-          // Use touchstart for better mobile responsiveness
+          let touchStartX = 0;
+          let touchStartY = 0;
+          let touchStartTime = 0;
+          let isScrolling = false;
+
+          // Track touch start
           card.addEventListener(
             "touchstart",
             (e) => {
+              const touchEvent = e as TouchEvent;
+              if (touchEvent.touches.length > 0) {
+                const touch = touchEvent.touches[0];
+                touchStartX = touch.clientX;
+                touchStartY = touch.clientY;
+                touchStartTime = Date.now();
+                isScrolling = false;
+              }
+            },
+            { passive: true }
+          );
+
+          // Track if user is scrolling
+          card.addEventListener(
+            "touchmove",
+            (e) => {
+              const touchEvent = e as TouchEvent;
+              if (touchEvent.touches.length > 0) {
+                const touch = touchEvent.touches[0];
+                const deltaX = Math.abs(touch.clientX - touchStartX);
+                const deltaY = Math.abs(touch.clientY - touchStartY);
+
+                // If movement is more than 10px, consider it a scroll
+                if (deltaX > 10 || deltaY > 10) {
+                  isScrolling = true;
+                }
+              }
+            },
+            { passive: true }
+          );
+
+          // Handle tap (not scroll) to flip card
+          card.addEventListener(
+            "touchend",
+            (e) => {
+              const touchEndTime = Date.now();
+              const touchDuration = touchEndTime - touchStartTime;
+
+              // Only flip if:
+              // 1. Not scrolling (movement was minimal)
+              // 2. Touch duration was short (less than 300ms - a quick tap)
+              if (!isScrolling && touchDuration < 300) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isFlipped = card.classList.contains("flipped");
+                if (isFlipped) {
+                  card.classList.remove("flipped");
+                  card.setAttribute("data-card-flipped", "false");
+                } else {
+                  card.classList.add("flipped");
+                  card.setAttribute("data-card-flipped", "true");
+                }
+              }
+            },
+            { passive: false }
+          );
+
+          // Also handle click as fallback for non-touch devices
+          card.addEventListener("click", (e) => {
+            // Only prevent default if it's not a touch device (mouse click)
+            if (!isTouchDevice) {
               e.preventDefault();
               e.stopPropagation();
               const isFlipped = card.classList.contains("flipped");
@@ -338,21 +404,6 @@ const {
                 card.classList.add("flipped");
                 card.setAttribute("data-card-flipped", "true");
               }
-            },
-            { passive: false }
-          );
-
-          // Also handle click as fallback
-          card.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const isFlipped = card.classList.contains("flipped");
-            if (isFlipped) {
-              card.classList.remove("flipped");
-              card.setAttribute("data-card-flipped", "false");
-            } else {
-              card.classList.add("flipped");
-              card.setAttribute("data-card-flipped", "true");
             }
           });
         }
