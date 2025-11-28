@@ -188,7 +188,7 @@ const {
     color: #000;
     padding: 2px 8px;
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 24px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -200,7 +200,7 @@ const {
     color: #000;
     padding: 2px 8px;
     border-radius: 8px;
-    font-size: 17px;
+    font-size: 24px;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -208,7 +208,7 @@ const {
   }
 
   .card-title {
-    font-size: 36px;
+    font-size: 50px;
     font-weight: 500;
     text-transform: uppercase;
     color: white;
@@ -263,7 +263,7 @@ const {
   }
 
   .stat-label {
-    font-size: 15px;
+    font-size: 22px;
     text-transform: uppercase;
     color: white;
     letter-spacing: 0.5px;
@@ -273,10 +273,29 @@ const {
   }
 
   .stat-value {
-    font-size: 32px;
+    font-size: 48px;
     font-weight: 700;
     color: white;
     line-height: 1;
     font-family: "Oswald", sans-serif;
+  }
+
+  @media (min-width: 640px) {
+    .label-champion,
+    .label-since {
+      font-size: 17px;
+    }
+
+    .card-title {
+      font-size: 36px;
+    }
+
+    .stat-label {
+      font-size: 15px;
+    }
+
+    .stat-value {
+      font-size: 32px;
+    }
   }
 </style>
