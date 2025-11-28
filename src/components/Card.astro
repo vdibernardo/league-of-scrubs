@@ -125,9 +125,14 @@ const {
     z-index: 2;
   }
 
-  .card-container:hover .card-flip,
   .card-container.flipped .card-flip {
     transform: rotateY(180deg);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .card-container:hover .card-flip {
+      transform: rotateY(180deg);
+    }
   }
 
   .card-front,
@@ -319,6 +324,25 @@ const {
           "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
         if (isMobile || isTouchDevice) {
+          // Use touchstart for better mobile responsiveness
+          card.addEventListener(
+            "touchstart",
+            (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const isFlipped = card.classList.contains("flipped");
+              if (isFlipped) {
+                card.classList.remove("flipped");
+                card.setAttribute("data-card-flipped", "false");
+              } else {
+                card.classList.add("flipped");
+                card.setAttribute("data-card-flipped", "true");
+              }
+            },
+            { passive: false }
+          );
+
+          // Also handle click as fallback
           card.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -344,5 +368,6 @@ const {
 
     // Also run after a short delay to catch any cards rendered later
     setTimeout(initCardFlip, 100);
+    setTimeout(initCardFlip, 500);
   })();
 </script>
