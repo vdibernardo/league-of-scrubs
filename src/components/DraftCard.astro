@@ -1,0 +1,144 @@
+---
+interface Props {
+  year: string;
+  boardImage: string;
+  videoLink?: string;
+  first: { icon: string; text: string };
+  second: { icon: string; text: string };
+  last: { icon: string; text: string };
+}
+
+const { year, boardImage, videoLink, first, second, last } = Astro.props;
+const title = videoLink ? "VIDEO BOARD" : "BOARD";
+---
+
+<div class="group draft-card w-full max-w-[320px] rounded-3xl p-[9px] relative box-border">
+  <div class="draft-card-inner rounded-2xl p-6 relative">
+    <div class="draft-card-content w-full flex flex-col text-white font-['Oswald'] relative z-[1]">
+      <div class="mb-4">
+        <div class="year-badge text-3xl sm:text-2xl font-normal text-white bg-black px-4 py-3 sm:px-3 sm:py-2 rounded-lg block w-full uppercase tracking-wide text-center group-hover:text-black">
+          {year}
+        </div>
+      </div>
+      <h2 class="text-7xl sm:text-6xl font-bold text-[#5F5F5F] mb-8 uppercase tracking-wide leading-none">
+        {title.split(" ").map((word, index) => {
+          if (word === "BOARD") {
+            return (
+              <a
+                href={boardImage}
+                class="transition-colors duration-300 block hover:text-[#D493FF] mt-4 cursor-pointer shadowbox-trigger"
+                data-image={boardImage}
+              >
+                {word}
+              </a>
+            );
+          } else if (word === "VIDEO") {
+            return (
+              <a
+                href={videoLink || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors duration-300 block hover:text-[#8BFFAC] cursor-pointer"
+              >
+                {word}
+              </a>
+            );
+          } else {
+            return (
+              <span
+                class={`transition-colors duration-300 block ${
+                  word === "VIDEO"
+                    ? "hover:text-purple-400"
+                    : "hover:text-red-600 mt-4"
+                }`}
+              >
+                {word}
+              </span>
+            );
+          }
+        })}
+      </h2>
+      <div class="flex flex-col gap-4 flex-1">
+        <div class="flex items-center gap-3">
+          <img
+            src={first.icon}
+            alt=""
+            class="w-[28px] h-[28px] flex-shrink-0"
+          />
+          <span class="text-xl sm:text-lg font-normal text-white uppercase tracking-wide">
+            {first.text}
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            src={second.icon}
+            alt=""
+            class={`w-[28px] h-[28px] flex-shrink-0 ${
+              second.icon === "/award.svg" ? "icon-silver" : ""
+            }`}
+          />
+          <span class="text-xl sm:text-lg font-normal text-white uppercase tracking-wide">
+            {second.text}
+          </span>
+        </div>
+        <div class="flex items-center gap-3">
+          <img
+            src={last.icon}
+            alt=""
+            class="w-[28px] h-[28px] flex-shrink-0"
+          />
+          <span class="text-xl sm:text-lg font-normal text-white uppercase tracking-wide">
+            {last.text}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .draft-card {
+    background-image: url("../assets/card-border.jpg");
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .draft-card-inner {
+    background-image: url("../assets/card-background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .draft-card-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 16px;
+    z-index: 0;
+  }
+
+  .year-badge {
+    transition: background-image 0.3s ease, color 0.3s ease;
+  }
+
+  .group:hover .year-badge {
+    background-image: url("../assets/card-border.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+  }
+
+  .icon-silver {
+    filter: brightness(0) saturate(100%) invert(75%) sepia(0%) saturate(0%)
+      hue-rotate(0deg) brightness(1) contrast(1);
+  }
+</style>
+
