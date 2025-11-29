@@ -1,52 +1,114 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DraftCard from "../components/DraftCard.astro";
+import board2024 from "../assets/boards/2024.png";
+import board2023 from "../assets/boards/2023.png";
+import board2022 from "../assets/boards/2022.png";
+import board2021 from "../assets/boards/2021.png";
+import board2020 from "../assets/boards/2020.png";
+import board2019 from "../assets/boards/2019.png";
+import board2018 from "../assets/boards/2018.png";
+import board2017 from "../assets/boards/2017.png";
+import board2016 from "../assets/boards/2016.png";
+import board2015 from "../assets/boards/2015.png";
+import board2014 from "../assets/boards/2014.png";
+import board2013 from "../assets/boards/2013.png";
 
 const draftCards = [
   {
     year: "2025",
-    boardImage: "#", // Replace with actual image URL
-    first: { icon: "/trophy.svg", text: "POOPY RAINBOW RAIDERS" },
-    second: { icon: "/award.svg", text: "POOPY RAINBOW RAIDERS" },
-    last: { icon: "/toilet.svg", text: "BLANK SPACE CADETS" },
+    boardImage: "", // Replace with actual image URL
+    first: { icon: "/trophy.svg", text: "TBD" },
+    second: { icon: "/award.svg", text: "TBD" },
+    last: { icon: "/toilet.svg", text: "TBD" },
   },
   {
     year: "2024",
-    boardImage: "#", // Replace with actual image URL
-    first: { icon: "/trophy.svg", text: "POOPY RAINBOW RAIDERS" },
-    second: { icon: "/award.svg", text: "POOPY RAINBOW RAIDERS" },
-    last: { icon: "/toilet.svg", text: "BLANK SPACE CADETS" },
+    boardImage: board2024.src,
+    first: { icon: "/trophy.svg", text: "KING PENGUINS" },
+    second: { icon: "/award.svg", text: "HANGIN' BRAIN ON THE BEAN" },
+    last: { icon: "/toilet.svg", text: "MR. MIKEASTONKZ" },
   },
   {
     year: "2023",
-    boardImage: "#", // Replace with actual image URL
-    first: { icon: "/trophy.svg", text: "POOPY RAINBOW RAIDERS" },
-    second: { icon: "/award.svg", text: "POOPY RAINBOW RAIDERS" },
+    boardImage: board2023.src,
+    first: { icon: "/trophy.svg", text: "GAME OF CHRONS" },
+    second: { icon: "/award.svg", text: "FIT BIRDS" },
     last: { icon: "/toilet.svg", text: "BLANK SPACE CADETS" },
   },
   {
     year: "2022",
-    boardImage: "#", // Replace with actual image URL
-    videoLink: "#", // Replace with actual YouTube URL
-    first: { icon: "/trophy.svg", text: "POOPY RAINBOW RAIDERS" },
-    second: { icon: "/award.svg", text: "POOPY RAINBOW RAIDERS" },
-    last: { icon: "/toilet.svg", text: "BLANK SPACE CADETS" },
+    boardImage: board2022.src,
+    videoLink: "https://www.youtube.com/watch?v=FgXgg72N8x8",
+    first: { icon: "/trophy.svg", text: "GOBELL OR GO HOME" },
+    second: { icon: "/award.svg", text: "FICKLE MICKLE'S LITTLE PICKLE" },
+    last: { icon: "/toilet.svg", text: "GAME OF CHRONS" },
   },
   {
     year: "2021",
-    boardImage: "#", // Replace with actual image URL
-    videoLink: "#", // Replace with actual YouTube URL
-    first: { icon: "/trophy.svg", text: "POOPY RAINBOW RAIDERS" },
-    second: { icon: "/award.svg", text: "POOPY RAINBOW RAIDERS" },
-    last: { icon: "/toilet.svg", text: "BLANK SPACE CADETS" },
+    boardImage: board2021.src,
+    videoLink: "https://www.youtube.com/watch?v=uwrKoCNJGIQ&feature=youtu.be",
+    first: { icon: "/trophy.svg", text: "BLIMP ENTHUSIASTS" },
+    second: { icon: "/award.svg", text: "VBALLER? I BARELY KNOW'ER" },
+    last: { icon: "/toilet.svg", text: "ED ASS" },
   },
   {
     year: "2020",
-    boardImage: "#", // Replace with actual image URL
-    videoLink: "#", // Replace with actual YouTube URL
-    first: { icon: "/trophy.svg", text: "POOPY RAINBOW RAIDERS" },
+    boardImage: board2020.src,
+    videoLink: "https://www.youtube.com/watch?v=khCpKCowvlc&feature=youtu.be",
+    first: { icon: "/trophy.svg", text: "I FEED ZEKE" },
+    second: { icon: "/award.svg", text: "ED ASS" },
+    last: { icon: "/toilet.svg", text: "POOPY RAINBOW RIDERS" },
+  },
+  {
+    year: "2019",
+    boardImage: board2019.src,
+    videoLink: "https://www.youtube.com/watch?v=uE15ddpE6JQ",
+    first: { icon: "/trophy.svg", text: "BLIMP ENTHUSIASTS" },
+    second: { icon: "/award.svg", text: "I WIN .77 TIMES AS OFTEN AS MALES" },
+    last: { icon: "/toilet.svg", text: "GAME OF CHRONS" },
+  },
+  {
+    year: "2018",
+    boardImage: board2018.src,
+    first: { icon: "/trophy.svg", text: "BLANK SPACE CADETS" },
+    second: { icon: "/award.svg", text: "THE MAYOR OF TD CITY" },
+    last: { icon: "/toilet.svg", text: "AGENT LA MEZZO" },
+  },
+  {
+    year: "2017",
+    boardImage: board2017.src,
+    first: { icon: "/trophy.svg", text: "BLANK SPACE CADETS" },
+    second: { icon: "/award.svg", text: "VBALLER? I BARELY KNOW'ER" },
+    last: { icon: "/toilet.svg", text: "FICKLE MICKLE'S LITTLE PICKLE" },
+  },
+  {
+    year: "2016",
+    boardImage: board2016.src,
+    first: { icon: "/trophy.svg", text: "DOMESTIC VIOLINS" },
+    second: { icon: "/award.svg", text: "ICY BOIZ" },
+    last: { icon: "/toilet.svg", text: "TOP KEK" },
+  },
+  {
+    year: "2015",
+    boardImage: board2015.src,
+    first: { icon: "/trophy.svg", text: "BLANK SPACE CADETS" },
     second: { icon: "/award.svg", text: "POOPY RAINBOW RAIDERS" },
-    last: { icon: "/toilet.svg", text: "BLANK SPACE CADETS" },
+    last: { icon: "/toilet.svg", text: "TEAM GONZALEZ" },
+  },
+  {
+    year: "2014",
+    boardImage: board2014.src,
+    first: { icon: "/trophy.svg", text: "PARTY PENGUINS" },
+    second: { icon: "/award.svg", text: "EASY, BREESY, BEAUTIFUL" },
+    last: { icon: "/toilet.svg", text: "SHRIVELED BALLSACK" },
+  },
+  {
+    year: "2013",
+    boardImage: board2013.src,
+    first: { icon: "/trophy.svg", text: "REGGIE'S BUSH" },
+    second: { icon: "/award.svg", text: "WINNIN IT 4 JUUUUUUUU" },
+    last: { icon: "/toilet.svg", text: "WHIPPED CREAMERS" },
   },
 ];
 ---
@@ -55,7 +117,7 @@ const draftCards = [
   <main class="min-h-screen py-12">
     <section class="max-w-6xl mx-auto px-4 sm:px-4">
       <div
-        class="cards-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-6 sm:justify-items-center justify-content-center mx-auto"
+        class="cards-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 sm:justify-items-center justify-content-center mx-auto"
       >
         {
           draftCards.map((card) => (
@@ -77,15 +139,11 @@ const draftCards = [
   <div
     id="shadowbox"
     class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center"
-    onclick="closeShadowbox(event)"
   >
-    <div
-      class="relative max-w-7xl max-h-[90vh] p-4"
-      onclick="event.stopPropagation()"
-    >
+    <div class="relative max-w-7xl max-h-[90vh] p-4">
       <button
-        class="absolute top-2 right-2 text-white text-4xl font-bold hover:text-gray-300 z-10"
-        onclick="closeShadowbox()"
+        id="shadowbox-close"
+        class="absolute top-2 right-2 text-white text-4xl font-bold hover:text-gray-300 z-10 cursor-pointer"
         aria-label="Close"
       >
         ×
@@ -108,13 +166,13 @@ const draftCards = [
     margin-right: auto;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .cards-grid {
       grid-template-columns: repeat(2, max-content);
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
     .cards-grid {
       grid-template-columns: repeat(3, max-content);
     }
@@ -146,14 +204,7 @@ const draftCards = [
     }
   }
 
-  function closeShadowbox(event?: Event) {
-    if (
-      event &&
-      event.target !== event.currentTarget &&
-      (event.target as HTMLElement).id !== "shadowbox"
-    ) {
-      return;
-    }
+  function closeShadowbox() {
     const shadowbox = document.getElementById("shadowbox");
     if (shadowbox) {
       shadowbox.classList.add("hidden");
@@ -173,10 +224,31 @@ const draftCards = [
     }
   });
 
+  // Close button handler - use event delegation
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.id === "shadowbox-close" || target.closest("#shadowbox-close")) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeShadowbox();
+    }
+  });
+
+  // Close on background click
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.id === "shadowbox") {
+      closeShadowbox();
+    }
+  });
+
   // Close on Escape key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      closeShadowbox();
+      const shadowbox = document.getElementById("shadowbox");
+      if (shadowbox && !shadowbox.classList.contains("hidden")) {
+        closeShadowbox();
+      }
     }
   });
 </script>

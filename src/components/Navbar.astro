@@ -1,5 +1,7 @@
 ---
-
+const currentPath = Astro.url.pathname;
+const isScrubsPage = currentPath === "/scrubs" || currentPath === "/";
+const isDraftPage = currentPath === "/draft";
 ---
 
 <nav
@@ -9,7 +11,7 @@
   <div class="mx-auto px-6">
     <div class="grid grid-cols-3 items-center py-4 transition-all duration-300">
       <a
-        href="/"
+        href="/scrubs"
         id="logo"
         class="text-white text-xl font-semibold transition-all duration-300 justify-self-start font-oswald uppercase"
       >
@@ -19,20 +21,20 @@
       <div class="flex flex-row items-center justify-center space-x-8">
         <a
           href="/scrubs"
-          class="nav-link text-white text-sm font-medium hover:opacity-80 transition-opacity font-oswald uppercase"
+          class={`nav-link text-sm font-medium hover:opacity-80 transition-opacity font-oswald uppercase ${isScrubsPage ? "text-[#D493FF]" : "text-white"}`}
         >
           Scrubs
         </a>
         <a
           href="/draft"
-          class="nav-link text-white text-sm font-medium hover:opacity-80 transition-opacity font-oswald uppercase"
+          class={`nav-link text-sm font-medium hover:opacity-80 transition-opacity font-oswald uppercase ${isDraftPage ? "text-[#D493FF]" : "text-white"}`}
         >
           Draft
         </a>
       </div>
       <button
         onclick="window.open('https://theleagueofscrubs.bigcartel.com/?_gl=1*5f8xrj*_gcl_au*NzQ4NDE2OTYwLjE3NjQwNDc1OTAuNjY3NzI4NTU4LjE3NjQwNDc1OTguMTc2NDA0NzU5Nw..*_ga*MTM1NDMwNzQzOS4xNzY0MDQ3NTkw*_ga_QZ4HDFTSEZ*czE3NjQwNDc1ODkkbzEkZzEkdDE3NjQwNDc1OTckajUyJGwwJGgyMzEzNjY4MTk.', '_blank')"
-        class="nav-button bg-white text-black text-sm font-medium px-3 py-1.5 rounded-lg hover:opacity-90 transition-opacity justify-self-end font-oswald uppercase"
+        class="nav-button bg-white text-black text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-[#8BFFAC] transition-colors justify-self-end font-oswald uppercase"
       >
         Shop
       </button>

@@ -12,15 +12,15 @@ const { year, boardImage, videoLink, first, second, last } = Astro.props;
 const title = videoLink ? "VIDEO BOARD" : "BOARD";
 ---
 
-<div class="group draft-card w-full max-w-[320px] rounded-3xl p-[9px] relative box-border">
-  <div class="draft-card-inner rounded-2xl p-6 relative">
+<div class="group draft-card w-full max-w-[90vw] sm:max-w-[320px] rounded-3xl p-[10px] sm:p-[9px] relative box-border">
+  <div class="draft-card-inner rounded-2xl p-7 sm:p-6 relative">
     <div class="draft-card-content w-full flex flex-col text-white font-['Oswald'] relative z-[1]">
-      <div class="mb-4">
-        <div class="year-badge text-3xl sm:text-2xl font-normal text-white bg-black px-4 py-3 sm:px-3 sm:py-2 rounded-lg block w-full uppercase tracking-wide text-center group-hover:text-black">
+      <div class="mb-5 sm:mb-4">
+        <div class="year-badge text-3xl sm:text-2xl font-normal text-white bg-black px-5 py-3.5 sm:px-3 sm:py-2 rounded-lg block w-full uppercase tracking-wide text-center group-hover:text-black">
           {year}
         </div>
       </div>
-      <h2 class="text-7xl sm:text-6xl font-bold text-[#5F5F5F] mb-8 uppercase tracking-wide leading-none">
+      <h2 class="text-7xl sm:text-6xl font-bold text-[#5F5F5F] mb-9 sm:mb-8 uppercase tracking-wide leading-none">
         {title.split(" ").map((word, index) => {
           if (word === "BOARD") {
             return (
@@ -58,22 +58,22 @@ const title = videoLink ? "VIDEO BOARD" : "BOARD";
           }
         })}
       </h2>
-      <div class="flex flex-col gap-4 flex-1">
-        <div class="flex items-center gap-3">
+      <div class="flex flex-col gap-5 sm:gap-4 flex-1">
+        <div class="flex items-center gap-3.5 sm:gap-3">
           <img
             src={first.icon}
             alt=""
-            class="w-[28px] h-[28px] flex-shrink-0"
+            class="w-[32px] h-[32px] sm:w-[28px] sm:h-[28px] flex-shrink-0"
           />
           <span class="text-xl sm:text-lg font-normal text-white uppercase tracking-wide">
             {first.text}
           </span>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3.5 sm:gap-3">
           <img
             src={second.icon}
             alt=""
-            class={`w-[28px] h-[28px] flex-shrink-0 ${
+            class={`w-[32px] h-[32px] sm:w-[28px] sm:h-[28px] flex-shrink-0 ${
               second.icon === "/award.svg" ? "icon-silver" : ""
             }`}
           />
@@ -81,11 +81,11 @@ const title = videoLink ? "VIDEO BOARD" : "BOARD";
             {second.text}
           </span>
         </div>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-3.5 sm:gap-3">
           <img
             src={last.icon}
             alt=""
-            class="w-[28px] h-[28px] flex-shrink-0"
+            class="w-[32px] h-[32px] sm:w-[28px] sm:h-[28px] flex-shrink-0"
           />
           <span class="text-xl sm:text-lg font-normal text-white uppercase tracking-wide">
             {last.text}
