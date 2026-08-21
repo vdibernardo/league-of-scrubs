@@ -7,8 +7,13 @@ assert.match(page, /import collinImage from .*scrub-collin\.png/);
 assert.match(page, /import collinTeam from .*team-collin\.jpg/);
 assert.match(page, /sinceYear="SINCE '26"/);
 assert.match(page, /title="COLLINOSCOPIES ARE MY ANTI-DRUG"/);
+assert.match(page, /titleSize="compact"/);
 assert.match(page, />\s*In Loving Memory\s*</);
+assert.match(page, /uppercase tracking-\[0\.35em\] text-gray-400/);
 assert.match(page, /class="memorial-grid/);
+
+const footballIcons = page.match(/data-football-icon/g) ?? [];
+assert.equal(footballIcons.length, 2, "memorial heading must have two football icons");
 
 const activeGrid = page.indexOf('class="cards-grid');
 const memorialGrid = page.indexOf('class="memorial-grid');
