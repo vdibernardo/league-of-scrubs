@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 
 const page = await readFile("src/pages/scrubs.astro", "utf8");
+const card = await readFile("src/components/Card.astro", "utf8");
 
 assert.match(page, /import collinImage from .*scrub-collin\.png/);
 assert.match(page, /import collinTeam from .*team-collin\.jpg/);
@@ -9,6 +10,7 @@ assert.match(page, /import \{ Icon \} from "astro-icon\/components"/);
 assert.match(page, /sinceYear="SINCE '26"/);
 assert.match(page, /title="COLLINOSCOPIES ARE MY ANTI-DRUG"/);
 assert.match(page, /titleSize="compact"/);
+assert.match(card, /\.card-title-compact\s*\{\s*font-size: 29px;/);
 assert.match(page, />\s*In Loving Memory\s*</);
 assert.match(page, /uppercase tracking-\[0\.35em\] text-gray-400/);
 assert.match(page, /class="memorial-grid/);
