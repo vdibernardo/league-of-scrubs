@@ -21,6 +21,8 @@ import mattImage from "../assets/scrubs/scrub-matt.png";
 import mattTeam from "../assets/team/team-matt.png";
 import mickleImage from "../assets/scrubs/scrub-mickle.png";
 import mickleTeam from "../assets/team/team-mickle.png";
+import collinImage from "../assets/scrubs/scrub-collin.png";
+import collinTeam from "../assets/team/team-collin.jpg";
 import stockImage from "../assets/scrubs/scrub-stock.png";
 import stockTeam from "../assets/team/team-stock.png";
 import chrisImage from "../assets/scrubs/scrub-chris.png";
@@ -125,13 +127,13 @@ import chrisTeam from "../assets/team/team-chris.png";
           ]}
         />
         <Card
-          img={mickleImage}
-          sinceYear="SINCE '17"
-          title="FICKLE MICKLE's LITTLE PICKLE"
-          backImage={mickleTeam}
+          img={collinImage}
+          sinceYear="SINCE '26"
+          title="COLLINOSCOPIES ARE MY ANTI-DRUG"
+          backImage={collinTeam}
           stats={[
-            { label: "SQUEALER", value: "1" },
-            { label: "DONG", value: "1" },
+            { label: "SQUEALER", value: "0" },
+            { label: "DONG", value: "0" },
           ]}
         />
         <Card
@@ -152,6 +154,23 @@ import chrisTeam from "../assets/team/team-chris.png";
           stats={[
             { label: "SQUEALER", value: "0" },
             { label: "DONG", value: "3" },
+          ]}
+        />
+      </div>
+    </section>
+    <section class="max-w-6xl mx-auto px-8 sm:px-6 pt-16">
+      <h2 class="text-center text-4xl font-semibold text-white mb-8">
+        In Loving Memory
+      </h2>
+      <div class="memorial-grid grid grid-cols-1 justify-items-center">
+        <Card
+          img={mickleImage}
+          sinceYear="SINCE '17"
+          title="FICKLE MICKLE's LITTLE PICKLE"
+          backImage={mickleTeam}
+          stats={[
+            { label: "SQUEALER", value: "1" },
+            { label: "DONG", value: "1" },
           ]}
         />
       </div>
