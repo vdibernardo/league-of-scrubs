@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DraftCard from "../components/DraftCard.astro";
+import board2025 from "../assets/boards/2025.png";
 import board2024 from "../assets/boards/2024.png";
 import board2023 from "../assets/boards/2023.png";
 import board2022 from "../assets/boards/2022.png";
@@ -17,7 +18,7 @@ import board2013 from "../assets/boards/2013.png";
 const draftCards = [
   {
     year: "2025",
-    boardImage: "", // Replace with actual image URL
+    boardImage: board2025.src,
     first: { icon: "/trophy.svg", text: "FICKLE MICKLE'S LITTLE PICKLE" },
     second: { icon: "/award.svg", text: "HANGIN' BRAIN ON THE BEAN" },
     last: { icon: "/toilet.svg", text: "VBALLER? I BARELY KNOW'ER" },

@@ -4,6 +4,7 @@ interface Props {
   champion?: string | boolean;
   sinceYear?: string;
   title?: string;
+  titleSize?: "compact";
   backImage?: any;
   stats?: Array<{ label: string; value: string | number }>;
 }
@@ -13,6 +14,7 @@ const {
   champion = false,
   sinceYear,
   title,
+  titleSize,
   backImage,
   stats = [],
 } = Astro.props;
@@ -49,7 +51,18 @@ const {
         </div>
 
         <!-- Title -->
-        {title && <h2 class="card-title">{title}</h2>}
+        {
+          title && (
+            <h2
+              class:list={[
+                "card-title",
+                titleSize === "compact" && "card-title-compact",
+              ]}
+            >
+              {title}
+            </h2>
+          )
+        }
 
         <!-- Main Content Area -->
         <div class="card-main-content">
@@ -227,6 +240,10 @@ const {
     margin: auto 0;
   }
 
+  .card-title-compact {
+    font-size: 34px;
+  }
+
   .card-main-content {
     display: flex;
     gap: 12px;
@@ -295,6 +312,10 @@ const {
 
     .card-title {
       font-size: 36px;
+    }
+
+    .card-title-compact {
+      font-size: 29px;
     }
 
     .stat-label {

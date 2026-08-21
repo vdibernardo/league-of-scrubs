@@ -12,9 +12,9 @@ const { year, boardImage, videoLink, first, second, last } = Astro.props;
 const title = videoLink ? "VIDEO BOARD" : "BOARD";
 ---
 
-<div class="group draft-card w-full max-w-[90vw] sm:max-w-[320px] rounded-3xl p-[10px] sm:p-[9px] relative box-border">
-  <div class="draft-card-inner rounded-2xl p-7 sm:p-6 relative">
-    <div class="draft-card-content w-full flex flex-col text-white font-['Oswald'] relative z-[1]">
+<div class="group draft-card w-full h-full max-w-[90vw] sm:max-w-[320px] rounded-3xl p-[10px] sm:p-[9px] relative box-border flex">
+  <div class="draft-card-inner w-full h-full flex-1 rounded-2xl p-7 sm:p-6 relative">
+    <div class="draft-card-content w-full h-full flex flex-col text-white font-['Oswald'] relative z-[1]">
       <div class="mb-5 sm:mb-4">
         <div class="year-badge text-3xl sm:text-2xl font-normal text-white bg-black px-5 py-3.5 sm:px-3 sm:py-2 rounded-lg block w-full uppercase tracking-wide text-center group-hover:text-black">
           {year}
@@ -141,4 +141,3 @@ const title = videoLink ? "VIDEO BOARD" : "BOARD";
       hue-rotate(0deg) brightness(1) contrast(1);
   }
 </style>
-
