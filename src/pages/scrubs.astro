@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+import { Icon } from "astro-icon/components";
 import bradImage from "../assets/scrubs/scrub-brad.png";
 import bradTeam from "../assets/team/team-brad.png";
 import bradyImage from "../assets/scrubs/scrub-brady.png";
@@ -37,7 +38,6 @@ import chrisTeam from "../assets/team/team-chris.png";
       >
         <Card
           img={bradImage}
-          champion="CHAMPION"
           sinceYear="SINCE '13"
           title="KING PENGUINS"
           backImage={bradTeam}
@@ -163,35 +163,24 @@ import chrisTeam from "../assets/team/team-chris.png";
       <h2
         class="flex items-center justify-center gap-3 mb-8 text-sm font-semibold uppercase tracking-[0.35em] text-gray-400"
       >
-        <svg
+        <Icon
           data-football-icon
           class="h-4 w-4 shrink-0"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
+          name="mdi:football"
           aria-hidden="true"
-        >
-          <path d="M5.2 18.8c-2-2-2-7.6 3.4-12.3S18.9 1.2 20.8 3.1c1.9 1.9-1 7-5.7 11.7S7.2 20.8 5.2 18.8Z" />
-          <path d="m9 8 7 7M10.5 12.5l2-2M12.5 14.5l2-2" />
-        </svg>
+        />
         <span>In Loving Memory</span>
-        <svg
+        <Icon
           data-football-icon
           class="h-4 w-4 shrink-0"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
+          name="mdi:football"
           aria-hidden="true"
-        >
-          <path d="M5.2 18.8c-2-2-2-7.6 3.4-12.3S18.9 1.2 20.8 3.1c1.9 1.9-1 7-5.7 11.7S7.2 20.8 5.2 18.8Z" />
-          <path d="m9 8 7 7M10.5 12.5l2-2M12.5 14.5l2-2" />
-        </svg>
+        />
       </h2>
       <div class="memorial-grid grid grid-cols-1 justify-items-center">
         <Card
           img={mickleImage}
+          champion="CHAMPION"
           sinceYear="SINCE '17"
           title="FICKLE MICKLE's LITTLE PICKLE"
           backImage={mickleTeam}
