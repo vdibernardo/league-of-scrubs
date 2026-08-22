@@ -11,7 +11,7 @@ assert.match(page, /sinceYear="SINCE '26"/);
 assert.match(page, /title="COLLINOSCOPIES ARE MY ANTI-DRUG"/);
 assert.match(page, /titleSize="compact"/);
 assert.match(card, /\.card-title-compact\s*\{\s*font-size: 29px;/);
-assert.match(page, />\s*In Loving Memory\s*</);
+assert.match(page, />\s*REST IN PEPPERONIS\s*</);
 assert.match(page, /uppercase tracking-\[0\.35em\] text-gray-400/);
 assert.match(page, /class="memorial-grid/);
 
